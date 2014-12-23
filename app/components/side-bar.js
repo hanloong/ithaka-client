@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   },
   actions: {
     toggleDropdown: function(target) {
-      Ember.$(`${target}`).toggleClass('active');
+      Ember.$('#' + target).toggleClass('active');
     }
   }
 });
