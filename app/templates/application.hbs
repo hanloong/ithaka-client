@@ -1,3 +1,7 @@
-<h2 id='title'>Welcome to Ember.js</h2>
-
-{{outlet}}
+{{side-bar projects=projects current_user=current_user.user}}
+<main>
+  {{nav-bar}}
+  <div class='fluid-container'>
+    {{outlet}}
+  </div>
+</main>
