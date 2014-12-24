@@ -7,8 +7,10 @@
   </div>
 
   <div class='widgets'>
+    {{projects}}
+    {{controller.model}}
     {{#if controller.model}}
-      {{#each controller}}
+      {{#each controller.model}}
         <div class='project'>
           <h2>{{name}}</h2>
           <div class='content'>

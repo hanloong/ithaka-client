@@ -1,5 +1,5 @@
 <div class='menu-wrapper'>
-  <p class='navigation-menu-button' {{action toggleSidebar on='click'}}>
+  <p class='navigation-menu-button' {{action "toggleSidebar" on='click'}}>
     <span class='icon-bars'></span>
   </p>
 
@@ -7,7 +7,7 @@
     <div class='nav'>
       <ul id='navigation-menu'>
         <li class='nav-link' id='site-search'>
-          <a {{action toggleSearch on='click'}}>
+          <a {{action "toggleSearch" on='click'}}>
             <span class='icon-search'></span>
           </a>
           <ul class='nav-dropdown'>
@@ -15,7 +15,7 @@
           </ul>
         </li>
         <li class='nav-link' id='notifications'>
-          <a {{action toggleNotifications}}>
+          <a {{action "toggleNotifications"}}>
             <span class='icon-bell'></span>
             <span class='badge error'>5</span>
           </a>
