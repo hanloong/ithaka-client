@@ -6,13 +6,23 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('projects', function() {
-    this.route('new');
+  this.route('app', function() {
+    this.resource('projects', function() {
+      this.route('new');
+    });
+
+    this.resource('ideas', function() {
+      this.route('new');
+    });
   });
 
-  this.resource('ideas', function() {
-    this.route('new');
+  this.route('public', {path: '/' }, function() {
+    this.route('how-it-works');
+    this.route('login');
+    this.route('register');
+    this.route('reset-password');
   });
+
 });
 
 export default Router;
