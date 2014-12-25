@@ -7,7 +7,10 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     'simple-auth': {
-      authorizer: 'simple-auth-authorizer:devise'
+      authorizer: 'simple-auth-authorizer:devise',
+      authenticationRoute: 'public.login',
+      routeAfterAuthentication: 'app',
+      routeIfAlreadyAuthenticated: 'app'
     },
     EmberENV: {
       FEATURES: {
