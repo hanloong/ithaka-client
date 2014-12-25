@@ -1,11 +1,9 @@
 // Default params
-
 $desktop-mode: $large-screen
 $spacing: 5px
 $row-height: 200px
 
 // Widget mixins
-
 @mixin widget($border-color, $cols, $rows: 1, $border-size: 4px)
   $widget-height: ($row-height * $rows) + (($rows - 1) * $spacing)
   $head-height: 40px
@@ -49,38 +47,21 @@ $row-height: 200px
     +omega()
 
 // Rules
+.app
+  background-color: $ithaka-bg
 
-.fluid-container
-  +outer-container(100%)
+  .fluid-container
+    +outer-container(100%)
 
-.widgets
-  margin: 0 $spacing
-  +clearfix
+  .widgets
+    margin: 0 $spacing
+    +clearfix
 
-.heading
-  +widget(white, 12, 1, 0px)
+  .heading
+    +widget(white, 12, 1, 0px)
 
-.dashboard
-  .projects
-    +widget($ithaka-success, 4, 2)
-
-  .activity
-    +widget($ithaka-primary, 4)
-
-  .calendar
-    +widget($ithaka-danger, 4)
-    +last-widget
-
-  .ideas
-    +widget($ithaka-primary, 4)
-
-  .news
-    +widget($ithaka-primary, 4)
-    +last-widget
-
-  .trending
-    +widget($ithaka-primary, 4)
-
-  .notifications
-    +widget($ithaka-primary, 8)
-    +last-widget
+  // partials
+  @import dashboard
+  @import navigation
+  @import sidebar
+  @import projects
