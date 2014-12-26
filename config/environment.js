@@ -8,9 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     'simple-auth': {
       authorizer: 'simple-auth-authorizer:devise',
-      authenticationRoute: 'public.login',
-      routeAfterAuthentication: 'app',
-      routeIfAlreadyAuthenticated: 'app'
+      authenticationRoute: 'public.login'
     },
     EmberENV: {
       FEATURES: {

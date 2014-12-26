@@ -6,11 +6,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     return this.csrf.fetchToken();
   },
   actions: {
-    sessionAuthenticationSucceeded: function() {
-      console.log('sessionAuthenticationSucceeded');
-    },
-    sessionInvalidationSucceeded: function() {
-      console.log('sessionInvalidationSucceeded');
+    onSessionIsAuthenticated: function() {
+      console.log('is auth');
     }
   }
 });
