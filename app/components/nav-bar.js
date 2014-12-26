@@ -13,6 +13,9 @@ export default Ember.Component.extend({
     },
     toggleNotifications: function() {
       Ember.$('#notifications').toggleClass('active');
+    },
+    invalidateSession: function() {
+      this.container.lookup('simple-auth-session:main').invalidate();
     }
   }
 });
