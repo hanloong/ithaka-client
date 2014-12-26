@@ -6,33 +6,25 @@ body.session
   $colour: lighten($background-color, 60%)
 
   background-color: $background-color
-  color: $colour
+  color: darken($colour, 40%)
 
   .login-form
     margin-top: 50px
     padding: 20px
+    background: white
 
     .brand
       font-size: 2em
       text-align: center
-      color: $colour
+      color: darken($colour, 40%)
       margin-bottom: 20px
 
       .icon-logo
+        color: white
         padding: 4px 9px
-        border: 1px solid $colour
+        border: none
+        background-color: $ithaka-brand
         border-radius: 4px
-
-    input
-      border: none
-      background: darken($background-color, 5%)
-      color: white
-      border-radius: 8px
-      &:focus
-        outline: none
-        box-shadow: none
-      @include placeholder
-        color: $background-color
 
     +media($desktop-mode)
       @include span-columns(4)
