@@ -18,9 +18,12 @@ Router.map(function() {
 
   this.route('public', {path: '/' }, function() {
     this.route('how-it-works');
+    this.route('reset-password');
+  });
+
+  this.route('session', function() {
     this.route('login');
     this.route('register');
-    this.route('reset-password');
   });
 
 });
