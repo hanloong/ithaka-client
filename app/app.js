@@ -11,14 +11,6 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
-
-
-import { setCsrfUrl } from 'rails-csrf/config';
-setCsrfUrl('/api/v1/csrf');
-
-loadInitializers(App, config.modulePrefix);
-loadInitializers(App, 'rails-csrf');
-
 Ember.Application.initializer({
   name:       'authentication',
   after:      'simple-auth',
@@ -34,5 +26,11 @@ Ember.Application.initializer({
     });
   }
 });
+
+import { setCsrfUrl } from 'rails-csrf/config';
+setCsrfUrl(`${config.apiURL}/api/v1/csrf`);
+
+loadInitializers(App, config.modulePrefix);
+loadInitializers(App, 'rails-csrf');
 
 export default App;

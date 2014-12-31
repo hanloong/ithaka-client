@@ -6,21 +6,11 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    'simple-auth': {
-      authorizer: 'simple-auth-authorizer:devise',
-      authenticationRoute: 'session.login'
-    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
-    },
-    contentSecurityPolicy: {
-      'default-src': "'none'",
-      'img-src': "'self' gravatar.com",
-      'style-src': "'self' 'unsafe-inline'",
-      'report-uri': "'self'"
     },
     APP: {
       // Here you can pass flags/options to your application instance
@@ -34,12 +24,15 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.apiURL = 'http://localhost:5000';
   }
 
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
+
+    ENV.apiURL = '';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -50,7 +43,28 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+    ENV.apiURL = 'https://ithaka.io';
   }
+
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'img-src': "'self' gravatar.com",
+    'style-src': "'self' 'unsafe-inline'",
+    'report-uri': "'self'",
+    'connect-src': ENV.apiURL
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise',
+    authenticationRoute: 'session.login',
+    crossOriginWhitelist: [ENV.apiURL]
+  };
+
+
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint:  ENV.apiURL + '/users/sign_in',
+    resourceName:         'user'
+  };
 
   return ENV;
 };
