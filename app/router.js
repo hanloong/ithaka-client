@@ -26,6 +26,7 @@ Router.map(function() {
     this.route('register');
   });
 
+  this.route('projects/new');
 });
 
 export default Router;
