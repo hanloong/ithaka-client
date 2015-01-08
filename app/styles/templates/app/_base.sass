@@ -36,9 +36,14 @@ $row-height: 200px
   &:hover
     border-top: $border-size solid darken($border-color, 10%)
     background: darken(white, 1%)
-  +span-columns(8)
+  +span-columns(12)
   +media($desktop-mode)
     +span-columns($cols)
+
+@mixin ungutter($nth: 1n)
+  &:nth-child(#{$nth})
+    margin-left: 0
+    margin-right: 0
 
 // Rules
 .app
@@ -49,6 +54,7 @@ $row-height: 200px
 
   .widgets
     margin: 0 $spacing
+    +row()
 
   .heading
     +widget(white, 12, 1, 0px)
