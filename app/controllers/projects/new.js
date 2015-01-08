@@ -1,10 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  name: '',
+  description: '',
   actions: {
     save: function() {
-      this.get('model').save();
-      this.transitionTo('projects');
+      var newProject = this.store.createRecord('project', {
+        name: this.name,
+        description: this.description
+      });
+      newProject.save();
+      this.transitionToRoute('projects');
     }
   }
 });
