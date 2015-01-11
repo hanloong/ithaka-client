@@ -6,5 +6,6 @@ export default DS.Model.extend({
   public:               DS.attr('boolean'),
   sandbox:              DS.attr('boolean'),
   allow_anonymous:      DS.attr('boolean'),
-  expires_at:           DS.attr('date')
+  expires_at:           DS.attr('date'),
+  ideas:                DS.hasMany('idea', {async: true})
 });

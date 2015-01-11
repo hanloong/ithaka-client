@@ -4,6 +4,13 @@
     <div class='project'>
       <h2>New Project</h2>
       <form class='content' {{action 'save' on='submit'}}>
+        {{#if errors.content}}
+          <ul class='flash-error'>
+            {{#each errors.content}}
+              <li>{{attribute}}: {{message}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
         {{input value=name}}
         {{textarea value=description}}
         <button type="submit">Save</button>

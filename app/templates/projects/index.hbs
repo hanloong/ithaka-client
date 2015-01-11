@@ -11,11 +11,13 @@
 
   <div class='widgets'>
     {{#if controller.model}}
-      {{#each controller.model}}
+      {{#each project in controller.model}}
         <div class='project'>
-          <h2>{{name}}</h2>
+          {{#link-to 'project' project}}
+            <h2>{{project.name}}</h2>
+          {{/link-to}}
           <div class='content'>
-            <p>{{description}}</p>
+            <p>{{project.description}}</p>
           </div>
         </div>
       {{/each}}
