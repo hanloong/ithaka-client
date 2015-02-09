@@ -7,15 +7,29 @@
   </div>
 
   <div class='ideas'>
-    {{#each controller.model.ideas}}
+    {{#if controller.model.ideas}}
+      {{#each idea in controller.model.ideas}}
+        <div class='idea'>
+          {{#link-to 'idea.index' idea}}
+            <h2>{{idea.name}}</h2>
+          {{/link-to}}
+          <div class='content'>
+            <p>Score: {{idea.score}}</p>
+            <p>{{{idea.description}}}</p>
+          </div>
+        </div>
+      {{/each}}
+    {{else}}
       <div class='idea'>
-        <h2>{{name}}</h2>
+        <h2>No ideas yet</h2>
         <div class='content'>
-          <p>Score: {{score}}</p>
-          <p>{{{description}}}</p>
+          <p>Maybe you should add one now.</p>
+          {{#link-to 'ideas.new'}}
+            Create new idea
+          {{/link-to}}
         </div>
       </div>
-    {{/each}}
+    {{/if}}
   </div>
 
   <div class="search">

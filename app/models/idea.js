@@ -7,5 +7,7 @@ export default DS.Model.extend({
   anonymous:            DS.attr('boolean'),
   favourites_count:     DS.attr('number'),
   comments_count:       DS.attr('number'),
-  project:              DS.belongsTo('project')
+  project:              DS.belongsTo('project'),
+  user:                 DS.belongsTo('user'),
+  comments:             DS.hasMany('comment', {async: true})
 });

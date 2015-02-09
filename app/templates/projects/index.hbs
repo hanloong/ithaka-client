@@ -13,11 +13,12 @@
     {{#if controller.model}}
       {{#each project in controller.model}}
         <div class='project'>
-          {{#link-to 'project' project}}
+          {{#link-to 'project.index' project}}
             <h2>{{project.name}}</h2>
           {{/link-to}}
           <div class='content'>
             <p>{{project.description}}</p>
+            <p>{{project.ideas.length}}</p>
           </div>
         </div>
       {{/each}}
