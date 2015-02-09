@@ -1,0 +1,14 @@
+<div class="new-idea">
+  <div class='widgets'>
+
+    <div class="idea">
+      <h2>New Idea</h2>
+      <form class='content' {{action 'save' on='submit'}}>
+        {{partial 'shared/form-errors'}}
+        {{input value=name}}
+        {{textarea value=description}}
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

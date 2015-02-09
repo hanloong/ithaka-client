@@ -1,0 +1,7 @@
+{{#if errors.content}}
+  <ul class='flash-error'>
+    {{#each errors.content}}
+      <li>{{attribute}}: {{message}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
