@@ -1,14 +1,14 @@
 <div class='show-project'>
   <div class='heading'>
-    <h2>{{controller.model.project.name}}</h2>
+    <h2>{{model.project.name}}</h2>
     <div class='content'>
-      {{controller.model.project.description}}
+      {{model.project.description}}
     </div>
   </div>
 
   <div class='ideas'>
-    {{#if controller.model.ideas}}
-      {{#each idea in controller.model.ideas}}
+    {{#if model.ideas}}
+      {{#each idea in model.ideas}}
         <div class='idea'>
           {{#link-to 'idea.index' idea.project idea}}
             <h2>{{idea.name}}</h2>

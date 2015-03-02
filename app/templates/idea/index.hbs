@@ -1,15 +1,16 @@
 <div class='show-idea'>
   <div class='heading'>
-    <h2>{{controller.model.idea.name}}</h2>
+    <h2>{{model.idea.name}}</h2>
     <div class='content'>
-      {{controller.model.idea.description}}
+      {{model.idea.description}}
     </div>
   </div>
 
   <div class='comments'>
-    {{#each controller.model.comments}}
+    {{#each model.comments}}
       <div class='comment'>
         <div class='content'>
+          {{comment}}
         </div>
       </div>
     {{/each}}

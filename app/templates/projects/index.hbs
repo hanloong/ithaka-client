@@ -10,8 +10,8 @@
   </div>
 
   <div class='widgets'>
-    {{#if controller.model}}
-      {{#each project in controller.model}}
+    {{#if model}}
+      {{#each project in model}}
         <div class='project'>
           {{#link-to 'project.index' project}}
             <h2>{{project.name}}</h2>
