@@ -10,7 +10,7 @@
     {{#if controller.model.ideas}}
       {{#each idea in controller.model.ideas}}
         <div class='idea'>
-          {{#link-to 'idea.index' idea}}
+          {{#link-to 'idea.index' idea.project idea}}
             <h2>{{idea.name}}</h2>
           {{/link-to}}
           <div class='content'>

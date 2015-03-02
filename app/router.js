@@ -11,26 +11,20 @@ Router.map(function() {
       this.route("new");
     });
 
-    this.resource("project", {
-      path: "project/:project_id"
-    }, function() {
+    this.resource("project", { path: "project/:project_id" }, function() {
       this.route("edit");
 
       this.resource("ideas", function() {
         this.route("new");
       });
 
-      this.resource("idea", {
-        path: "idea/:idea_id"
-      }, function() {
+      this.resource("idea", { path: "idea/:idea_id" }, function() {
         this.route("edit");
       });
     });
   });
 
-  this.route("public", {
-    path: "/"
-  }, function() {
+  this.route("public", { path: "/" }, function() {
     this.route("how-it-works");
     this.route("reset-password");
   });
@@ -38,12 +32,6 @@ Router.map(function() {
   this.route("session", function() {
     this.route("login");
     this.route("register");
-  });
-
-  this.route("ideas");
-
-  this.route("idea", function() {
-    this.route("edit");
   });
 });
 
