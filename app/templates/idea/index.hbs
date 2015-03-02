@@ -7,10 +7,11 @@
   </div>
 
   <div class='comments'>
-    {{#each model.comments}}
+    <h2>Discussion</h2>
+    {{#each model.idea.comments}}
       <div class='comment'>
         <div class='content'>
-          {{comment}}
+          {{{comment}}}
         </div>
       </div>
     {{/each}}
@@ -18,5 +19,5 @@
 
   <div class="search">
     <h2>Search and Sort</h2>
-  </span>
+  </div>
 </div>
