@@ -7,14 +7,25 @@
   </div>
 
   <div class='comments'>
-    <h2>Discussion</h2>
-    {{#each model.idea.comments}}
-      <div class='comment'>
-        <div class='content'>
-          {{{comment}}}
+    <div class='list'>
+      <h2>Discussion for reals</h2>
+      {{#each model.idea.comments}}
+        <div class='comment'>
+          <div class='content'>
+            {{{comment}}}
+          </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    </div>
+
+    <div class='comment-form'>
+      <h2>Leave your thoughts</h2>
+      <form class='content' {{action 'save' on='submit'}}>
+        {{partial 'shared/form-errors'}}
+        {{textarea value=newComment}}
+        <button type="submit">Save</button>
+      </form>
+    </div>
   </div>
 
   <div class="search">

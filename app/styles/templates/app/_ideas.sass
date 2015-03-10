@@ -1,15 +1,19 @@
 .new-idea
   .idea
     +widget($ithaka-success, 12, 2)
-    form
-      +span-columns(6)
+    +media($desktop-mode)
+      form
+        +span-columns(6)
 
   .idea-options
     +widget($ithaka-danger, 6, 2)
 
 .show-idea
   .comments
-    +widget($ithaka-danger, 8, 2)
+    +media($desktop-mode)
+      +span-columns(8)
+    .list, .comment-form
+      +widget($ithaka-danger, 12, 0)
 
   .search
     +widget($ithaka-danger, 4, 2)

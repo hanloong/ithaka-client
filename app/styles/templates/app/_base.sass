@@ -5,7 +5,10 @@ $row-height: 200px
 
 // Widget mixins
 @mixin widget($border-color, $cols, $rows: 1, $border-size: 4px)
-  $widget-height: ($row-height * $rows) + (($rows - 1) * $spacing)
+  @if $rows == 0
+    $widget-height: none
+  @else
+    $widget-height: ($row-height * $rows) + (($rows - 1) * $spacing)
   $head-height: 40px
   $v-padding: 10px
   $h-padding: 20px

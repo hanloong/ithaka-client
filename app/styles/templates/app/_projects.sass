@@ -6,15 +6,17 @@
 .new-project
   .project
     +widget($ithaka-success, 12, 2)
-    form
-      +span-columns(6)
+    +media($desktop-mode)
+      form
+        +span-columns(6)
 
   .project-options
     +widget($ithaka-danger, 6, 2)
 
 .show-project
   .ideas
-    +span-columns(8)
+    +media($desktop-mode)
+      +span-columns(8)
 
   .idea
     +widget($ithaka-danger, 12, 2)
