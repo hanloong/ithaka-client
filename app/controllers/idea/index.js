@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
         idea: this.get('model').idea,
         comment: this.get('newComment')
       });
-      newComment.save().then((comment) => {
+      newComment.save().then(() => {
         this.set('newComment', '');
       }).catch(function() {
       });
